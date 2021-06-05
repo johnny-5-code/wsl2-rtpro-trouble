@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+   test:
+      build: .
+      image: test:latest
+      cap_add: 
+         - ALL
+      ulimits:
+         nproc: -1
+         nofile:
+            soft: 4096
+            hard: 8192
+         rtprio:
+            soft: -1
+            hard: -1
